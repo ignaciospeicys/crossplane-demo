@@ -1,0 +1,12 @@
+apiVersion: s3.aws.crossplane.io/v1beta1
+kind: Bucket
+metadata:
+  name: my-demo-bucket
+spec:
+  forProvider:
+    locationConstraint: us-west-2
+    acl: private
+    versioningConfiguration:
+      status: Enabled
+  providerConfigRef:
+    name: default
