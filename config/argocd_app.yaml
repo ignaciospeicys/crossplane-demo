@@ -1,0 +1,22 @@
+project: default
+source:
+  repoURL: 'https://github.com/ignaciospeicys/crossplane-demo'
+  path: infrastructure/dev
+  targetRevision: HEAD
+  directory:
+    recurse: true
+    jsonnet:
+      tlas:
+        - name: ''
+          value: ''
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: crossplane-system
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
+    - PruneLast=true
+    - ServerSideApply=true
