@@ -1,0 +1,11 @@
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  labels:
+    app.kubernetes.io/instance: crossplane-dev
+  name: foocompany1.buckets.my-second-bucket
+spec:
+  forProvider:
+    region: us-west-2
+  providerConfigRef:
+    name: default
